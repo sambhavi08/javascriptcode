@@ -1,0 +1,25 @@
+function agefunc()
+{
+var bd=document.getElementById("bdate").value;
+var sd=new Date();
+var bdd=new Date(bd);
+
+var age = sd.getFullYear() - bdd.getFullYear();
+var m = sd.getMonth() - bdd.getMonth();
+    if (m < 0 || (m === 0 && sd.getDate() < bdd.getDate())) {
+        age = age - 1;
+    }
+
+    document.getElementById("age").innerHTML=age;
+
+}
+function countChar(val,error)
+{
+    var len = val.value.length;
+    document.getElementById("er").innerHTML=len;
+}
+
+
+
+
+   
