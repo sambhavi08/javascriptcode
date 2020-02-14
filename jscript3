@@ -1,0 +1,33 @@
+var rs=localStorage.getItem('show');
+var result=JSON.parse(rs);
+
+
+document.getElementById("hello").innerHTML = rs;
+console.log(result);
+for(let i in result){
+    for(let j in result[i]){
+        document.getElementById("sambhavi").append(result[i][j]+" ");
+        }
+       
+    }
+
+
+    // document.getElementById("hello2").innerHTML =(result[i].id);
+   /* function tabledata()
+    {
+
+        let resultList = '';
+        for(let i in result){
+
+            resultList +=   '<td> first-name  '+result[i].fname + '</td>';
+            
+        }
+    }
+    */
+    //resultList +=   '<h1> name  '+result[i].fname + '</h1>'
+      
+//}
+//document.getElementById("hello2").innerHTML = resultList;
+//document.getElementById("hello2").innerHTML = (JSON.stringify(result[0].));   
+// console.log(result[0]);
+
