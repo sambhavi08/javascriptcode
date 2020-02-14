@@ -1,0 +1,68 @@
+function buttonEnabled() {
+        var fn=document.getElementById('fname').value;
+        var ln=document.getElementById('lname').value;
+        document.getElementById("rrnext").disabled = true;
+                        if((fn && ln )!="") 
+                        { 
+                            document.getElementById("rrnext").disabled = false;
+                        }        
+ }
+ function emptyField(dataVal,errorClass) {
+    var fn=dataVal.value;
+    document.getElementById(errorClass).innerHTML="";
+    if(fn==""){
+        document.getElementById(errorClass).innerHTML="cant be empty"; }
+}
+var arr1=[];
+function rnext(){
+   var value1=document.getElementById("formregister").elements;
+ 
+   var obj={};
+  
+   for( var y=0;y<value1.length;y++)
+   {
+        if(value1[y].type=="button")
+        {
+            continue;
+        }
+        let name=value1[y].id;
+        let val=value1[y].value;
+        obj={...obj,[name]:val};
+        
+   
+   } arr1=[...arr1,obj];
+  
+   var result=JSON.stringify(arr1);
+   if (typeof(Storage) !== "undefined") {
+    localStorage.setItem("show",result);
+  }
+  console.log(result);
+  console.log(arr1);
+   return false;
+  
+  
+}
+function loader(){
+    document.getElementById("maindiv").style.display="none";
+    document.getElementById("imgs").style.display="block";
+    setTimeout("call()",3000);
+
+}
+  function call(){
+document.getElementById("imgs").style.display="none";
+  }
+function cl(){
+                var ele= document.getElementById("formregister").elements;
+                for( var y=0;y<ele.length;y++)
+                {
+                    if(ele[y].type=="button")
+                    {
+                        continue;
+                    }
+                    ele[y].value="";
+                }
+}
+function sub(){
+    loader();
+    window.location="file:///C:/Users/sambhavir/Desktop/savi/javascript/multi_form/register2.html";
+}
